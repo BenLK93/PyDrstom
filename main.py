@@ -27,16 +27,16 @@ class DelovneUre(BoxLayout):
 		datum_v = self.datum_iz_vnosa.text
 		prihod_v = self.prihod_iz_vnosa.text
 		odhod_v = self.odhod_iz_vnosa.text
-		print(ime_v, datum_v, prihod_v, odhod_v)
+		dbf.input_dp(ime_v, datum_v, prihod_v, odhod_v)
 
 	def iskanje(self):
 
 		ime_i = self.ime_iskanje.text
-		datumiod = self.datumod_iskanje.text
-		datumido = self.datumdo_iskanje.text
-		datumvod = self.datumvod_iskanje.text
-		datumvdo = self.datumvdo_iskanje.text
-		print(ime_i, datumiod, datumido, datumvod, datumido) 
+		datum_i_od = self.datumod_iskanje.text
+		datum_i_do = self.datumdo_iskanje.text
+		datum_v_od = self.datumvod_iskanje.text
+		datum_v_do = self.datumvdo_iskanje.text
+		print(ime_i, datum_i_od, datum_i_do, datum_v_od, datum_v_do) 
 
 
 
