@@ -1,0 +1,306 @@
+DelovneUre:
+
+<DelovneUre@BoxLayout>:
+	#Vnos
+	ime_iz_vnosa: ime_vnos
+	datum_iz_vnosa: datum_vnos
+	prihod_iz_vnosa: prihod_vnos
+	odhod_iz_vnosa: odhod_vnos
+	#Iskanje
+	ime_iskanje: ime_i
+	datumod_iskanje: datum_od
+	datumdo_iskanje: datum_do
+	datumvod_iskanje: datum_vod
+	datumvdo_iskanje: datum_vdo
+	
+
+	orientation: 'vertical'
+	#Main wrapper
+	BoxLayout:
+		orientation: 'vertical'
+		
+		canvas:
+			Color:
+				rgba: (0.8, 0.95, 1, 0.8)
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+		# meni
+		BoxLayout:
+			size_hint_y: None
+			height: 30
+			
+
+			canvas:
+				Color:
+					rgba: (1, 1, 1, 0.9)
+				Rectangle:
+					pos: self.pos
+					size: self.size
+			Button:
+				text: 'Podatki'
+				size_hint_x: 2
+				width: 30
+			Button:
+				text: 'Informacije'
+				size_hint_x: 2
+				width: 30
+			Button:
+				text: 'Napredno'
+				size_hint_x: 2
+				width: 30
+			Label:
+				text: ''
+				size_hint_x: 6
+				width: 30
+		#meni konec
+		
+		#zgornji del
+		BoxLayout:
+			orientation: 'horizontal'
+			spacing: 10
+			padding: 10
+			
+			
+			#levo
+			#VNos is iskanje
+			BoxLayout:
+				orientation: 'vertical'
+				size_hint_x: 3
+				spacing: 10
+				
+				#Vnos
+				BoxLayout:
+					orientation: 'vertical'
+				    
+				    canvas:
+						Color:
+							rgba: (0.3, 0.5, 1, 1)
+						Rectangle:
+							pos: self.pos
+							size: self.size
+					
+					BoxLayout:
+						spacing: 20
+						size_hint_y: None
+						height: 40
+						orientation: 'horizontal'
+						padding: 6
+
+						Label:
+							text: 'Vnos Ur'
+							size_hint_x: 1
+
+						Label:
+							text: ''
+							size_hint_x: 3
+						Button:
+							text: 'Dodaj vec'
+							size_hint_x: 1
+					BoxLayout:
+						orientation: 'horizontal'
+						size_hint_y: None
+						height: 40
+						spacing: 10
+						padding: 7
+						
+
+
+						Spinner:
+							id: ime_vnos
+							text: 'Ime'
+							values: ["Tatjana", "Maja", "Tomaz"]
+							size_hint_x: 1
+
+
+						TextInput:
+							id: datum_vnos
+							text: 'Datum'
+							size_hint_x: 1
+
+						TextInput:
+							id: prihod_vnos
+							text: 'Prihod'
+							size_hint_x: 1
+
+						TextInput:
+							id: odhod_vnos
+							text: 'Odhod'
+							size_hint_x: 1
+
+						Button:
+							text: 'Dodaj'
+							size_hint_x: 1
+							on_press: root.vnos_v_db()
+
+				#vnos konec
+				#Iskanje 
+				BoxLayout:
+					orientation: 'vertical'
+					size_hint_y: 2.3
+					
+					#Naslov
+					BoxLayout:
+						orientation: 'horizontal'
+						size_hint_y: 0.7
+						
+						canvas:
+							Color:
+								rgba: (0.2, 0.3, 1, 1)
+							Rectangle:
+								pos: self.pos
+								size: self.size
+						
+
+						Label:
+							text: 'Iskanje:'
+							size_hint_x: 1
+						Label:
+							text: ''
+							size_hint_x: 4
+					#naslov konec
+					#iskanje vnos
+					BoxLayout:
+						orientation: 'vertical'
+						size_hint_y: 1.6
+
+						canvas:
+							Color:
+								rgba: (0.2, 0.5, 1, 1)
+							Rectangle:
+								pos: self.pos
+								size: self.size
+
+						BoxLayout:
+							orientation: 'horizontal'
+
+							Label:
+								text: 'Izberite ime:'
+								size_hint_x: 1
+							Spinner:
+								id: ime_i
+								text: 'Ime'
+								values: ["Tatjana", "Maja", "Tomaz"]
+								size_hint_x: 1
+							Label:
+							    text: ''
+							    size_hint_x: 1
+							Button:
+								text: 'Iskanje'
+								size_hint_x: 1
+								on_press: root.iskanje()
+
+
+						BoxLayout:
+							orientation: 'horizontal'
+
+							Label:
+								text: 'Datum: '
+								size_hint_x: 1
+							TextInput:
+								id: datum_od
+								text: 'datum'
+								size_hint_x: 2
+							Label:
+								text: '/'
+								size_hint_x: 0.5
+							TextInput:
+								id: datum_do
+								text: 'datum'
+								size_hint_x: 2
+
+						
+					
+
+						BoxLayout:
+							orientation: 'horizontal'
+
+							Label:
+								text: 'Datum vnosa: '
+								size_hint_x: 1
+							TextInput:
+								id: datum_vod
+								text: 'datum'
+								size_hint_x: 2
+							Label:
+								text: '/'
+								size_hint_x: 0.5
+							TextInput:
+								id: datum_vdo
+								text: 'datum'
+								size_hint_x: 2
+
+
+						
+					#iskanje vnos konec
+				#Iskanje konec
+			#Levo konec		
+
+
+			#desno 
+			#Ura datum in informacije
+			BoxLayout:
+				orientation: 'vertical'
+				size_hint_x: 1
+
+				BoxLayout:
+					canvas:
+						Color:
+							rgba: (0.2, 0.5, 1, 1)
+						Rectangle:
+							pos: self.pos
+							size: self.size
+
+					Label:
+						text: 'DESNOzgor'
+						size_hint_x: 1
+				BoxLayout:
+					canvas:
+						Color:
+							rgba: (0.2, 0.8, 1, 1)
+						Rectangle:
+							pos: self.pos
+							size: self.size
+					Label:
+						text: 'DESNOspodaj'
+						size_hint_x: 1
+			#desno konec
+		#zgornji del konec	
+		#spodnji del
+		BoxLayout:
+			padding: 10
+			orientation: 'vertical'
+			canvas:
+				Color:
+					rgba: (0, 0, 0, 0.7)
+				Rectangle:
+					pos: self.pos
+					size: self.size
+
+			Label:
+				size_hint_y: 1
+				text: 'Rezultati'
+			ListView:
+			
+				size_hint_y: 9
+				item_strings: ["Maja blabla asdadasd", "Edi bhasdbjkdajkjndsan"]
+			
+			BoxLayout:
+				orientation: 'horizontal'
+				size_hint_y: 1
+				Button:
+					text: 'Gumbi'
+					size_hint_y: 1 
+				Button:
+					text: 'Gumbi'
+					size_hint_y: 1 
+				Button:
+					text: 'Gumbi'
+					size_hint_y: 1 
+				Button:
+					text: 'Gumbi'
+					size_hint_y: 1 
+				Button:
+					text: 'Gumbi'
+					size_hint_y: 1 
