@@ -1,6 +1,18 @@
+# Reference main.py
+#: import main main
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
 DelovneUre:
 
-<DelovneUre@BoxLayout>:
+<PrikazListButton@ListItemButton>
+	text_size: self.size
+	halign: 'left'
+	selected_color: (0, 0, 1, 1)
+	deselected_color: (0, 0, 0, 1)
+		
+
+
+<DelovneUre>:
 	#Vnos
 	ime_iz_vnosa: ime_vnos
 	datum_iz_vnosa: datum_vnos
@@ -12,6 +24,8 @@ DelovneUre:
 	datumdo_iskanje: datum_do
 	datumvod_iskanje: datum_vod
 	datumvdo_iskanje: datum_vdo
+	#Prikaz podatkov
+	dbprikaz: prikaz
 	
 
 	orientation: 'vertical'
@@ -61,7 +75,7 @@ DelovneUre:
 			orientation: 'horizontal'
 			spacing: 10
 			padding: 10
-			
+			size_hint_y: 3
 			
 			#levo
 			#VNos is iskanje
@@ -105,8 +119,6 @@ DelovneUre:
 						spacing: 10
 						padding: 7
 						
-
-
 						Spinner:
 							id: ime_vnos
 							text: 'Ime'
@@ -140,26 +152,7 @@ DelovneUre:
 					orientation: 'vertical'
 					size_hint_y: 2.3
 					
-					#Naslov
-					BoxLayout:
-						orientation: 'horizontal'
-						size_hint_y: 0.7
-						
-						canvas:
-							Color:
-								rgba: (0.2, 0.3, 1, 1)
-							Rectangle:
-								pos: self.pos
-								size: self.size
-						
-
-						Label:
-							text: 'Iskanje:'
-							size_hint_x: 1
-						Label:
-							text: ''
-							size_hint_x: 4
-					#naslov konec
+				
 					#iskanje vnos
 					BoxLayout:
 						orientation: 'vertical'
@@ -271,6 +264,7 @@ DelovneUre:
 		BoxLayout:
 			padding: 10
 			orientation: 'vertical'
+			size_hint_y: 7
 			canvas:
 				Color:
 					rgba: (0, 0, 0, 0.7)
@@ -282,10 +276,11 @@ DelovneUre:
 				size_hint_y: 1
 				text: 'Rezultati'
 			ListView:
-			
+				id: prikaz
 				size_hint_y: 9
-				item_strings: ["Maja blabla asdadasd", "Edi bhasdbjkdajkjndsan"]
-			
+				adapter:
+					ListAdapter(data=[''' Ime  Datum  Prihod Odhod ure dela  datum vnosa          '''], cls=main.PrikazListButton)
+
 			BoxLayout:
 				orientation: 'horizontal'
 				size_hint_y: 1
