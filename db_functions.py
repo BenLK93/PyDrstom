@@ -39,12 +39,12 @@ def input_db(ime, datum, prihod, odhod):
 	conn.close()
 
 
-def update_entry():
+def update_entry(rowid, ime, datum, prihod, odhod):
 	
 	conn = sqlite3.connect('example.db')
 	c = conn.cursor()
 	
-	c.execute('UPDATE test2 SET ime=? WHERE ime=?', (data1,data2))
+	c.execute('UPDATE ure_zaposlenih SET ime=? WHERE rowid=?', (rowid, ime))
 
 	conn.commit()
 
@@ -54,8 +54,16 @@ def update_entry():
 	conn.close()
 
 
-def delete_entry():
-	pass
+def delete_entry(rid):
+	conn = sqlite3.connect('example.db')
+	c = conn.cursor()
+
+	c.execute('''DELETE FROM ure_zaposlenih WHERE rowid=? ''', (rid, ))
+
+	conn.commit()
+
+	conn.close()
+	
 
 def search_db():
 	pass
