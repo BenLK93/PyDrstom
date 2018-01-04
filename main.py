@@ -2,6 +2,7 @@ from kivy.config import Config
 Config.set('graphics', 'width', '1000')
 Config.set('graphics', 'height', '990')
 Config.set('graphics', 'resizable', False)
+Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 import kivy 
 kivy.require("1.9.0")
 from kivy.app import App
@@ -15,11 +16,13 @@ import sqlite3
 
 
 
+
 class PrikazListButton(ListItemButton):
     pass
 
 class UpdatePopup():
 	pass
+
 
 class DelovneUre(BoxLayout):
 	#Spremenljivke razreda
@@ -40,41 +43,78 @@ class DelovneUre(BoxLayout):
 		datum_v = self.datum_iz_vnosa.text
 		prihod_v = self.prihod_iz_vnosa.text
 		odhod_v = self.odhod_iz_vnosa.text
-		db_functions.input_db(ime_v, datum_v, prihod_v, odhod_v)
-		self.vnos_msg.text = "VNOS USTVARJEN za {} dan {} cas od {} do {}. Čas vnosa {}".format(ime_v, datum_v, prihod_v, odhod_v, datetime.datetime.now())
+		tip_vnosa = self.tip_dneva.text
+		
+		if tip_vnosa == "Delovni-dan":
+			if db_functions.input_db(ime_v, datum_v, prihod_v, odhod_v, tip_vnosa) == True:
+				self.vnos_msg.text = "VNOS USTVARJEN za osebo {} dan {} cas od {} do {}. Čas vnosa {}".format(ime_v, datum_v, prihod_v, odhod_v, datetime.datetime.now())
+			else:
+				self.vnos_msg.text = "Napaka pri vnosu. Pravilen format za vnos je datum[DD.MM.YYYY] npr. [12.3.2017]  ura[hh.mm] npr [14.30]."
+	
+		else:
+			if db_functions.input_db_drugo(ime_v, datum_v, tip_vnosa) == True:
+				self.vnos_msg.text = "VNOS USTVARJEN za osebo {} dan {} Tip dneva: {} . Čas vnosa {}".format(ime_v, datum_v, tip_vnosa, datetime.datetime.now())
+			else:
+				self.vnos_msg.text = "Napaka pri vnosu. Pravilen format za vnos je datum[DD.MM.YYYY] npr. [12.3.2017]"
+	
+		# elif tip_vnosa = "Dopust":
 
+		# else:
+
+		
+		
 	def iskanje(self): 
 
-		conn = sqlite3.connect('example.db')
+		conn = sqlite3.connect('drstom.db')
 		c = conn.cursor()
 		name = self.ime_iskanje.text
-		od = self.datumod_iskanje.text
-		do = self.datumdo_iskanje.text
-		result = c.execute('SELECT rowid, ime, datum, prihod, odhod, ure_skupaj, datum_vnosa FROM ure_zaposlenih WHERE ime=? AND datum BETWEEN ? AND ? ORDER BY datum', (name, od, do))
-		self.dbprikaz.adapter.data.clear()
-		for row in result:
 
-			rowid = row[0]
-			ime = row[1]
-			datum = row[2]
-			prihod = row[3]
-			odhod = row[4]
-			ure_skupaj = row[5]
-			datum_vnosa = row[6]
-			# Get the students name from textinput
-			vrstica = ' ' + str(rowid) + '| Ime: |' + ime + '| Datum: |' + str(datum) + '| Prihod: |' + str(prihod) + '| Odhod: |' + str(odhod) + '| Ure dela: |' + str(ure_skupaj) + '|-----Datum vnosa---|: ' + str(datum_vnosa)
-
-			#Add to list view
-
-			self.dbprikaz.adapter.data.extend([vrstica])
-
-		#Reset list view
+		try:
+			od = self.datumod_iskanje.text
+			dan, mesec, leto = map(int, od.split('.')) #razbijanje datuma in konverzija iz str v int
+			od_datum = datetime.date(leto, mesec, dan) #sestavljanje v datetime.date format
+			print(dan, mesec, leto)
+		except:
+			pass
 		
-		self.dbprikaz._trigger_reset_populate()
+		try:
+			do = self.datumdo_iskanje.text
+			dan, mesec, leto = map(int, do.split('.')) #razbijanje datuma in konverzija iz str v int
+			do_datum = datetime.date(leto, mesec, dan) #sestavljanje v datetime.date format
+			print(dan, mesec, leto)
+		except:
+			pass
+		
+		try:
+			result = c.execute('SELECT rowid, ime, datum, prihod, odhod, ure_skupaj, datum_vnosa, tip_dneva FROM ure_zaposlenih WHERE ime=? AND datum BETWEEN ? AND ? ORDER BY datum', (name, od_datum, do_datum))
+
+
+			self.dbprikaz.adapter.data.clear()
+			for row in result:
+
+				rowid = row[0]
+				ime = row[1]
+				datum = row[2]
+				prihod = row[3]
+				odhod = row[4]
+				ure_skupaj = row[5]
+				datum_vnosa = row[6]
+				tip_dneva = row[7]
+				# Get the students name from textinput
+				vrstica = ' ' + str(rowid) + ' | Ime: |' + ime + '| Datum: |' + str(datum) + '| Prihod: |' + str(prihod) + '| Odhod: |' + str(odhod) + '| Ure dela: |' + str(ure_skupaj) + ' |Tip dneva: |' + str(tip_dneva) + '|-----Datum vnosa---|: ' + str(datum_vnosa)
+
+				#Add to list view
+
+				self.dbprikaz.adapter.data.extend([vrstica])
+
+			#Reset list view
+		
+			self.dbprikaz._trigger_reset_populate()
 
 		
-		conn.close()
-
+			conn.close()
+		except:
+			pass
 	def delete_item(self, *args):
  
         # If a list item is selected
@@ -90,7 +130,7 @@ class DelovneUre(BoxLayout):
 
 	def clear_list(self):
 		#Clearing list view.
-		empty = '..List CLeared..'
+		empty = ''
 		self.dbprikaz.adapter.data.clear()
 		self.dbprikaz.adapter.data.extend([empty])
 		self.dbprikaz._trigger_reset_populate()

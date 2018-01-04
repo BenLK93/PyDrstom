@@ -12,33 +12,37 @@ DelovneUre:
 	deselected_color: (0, 0.3, 0.6, 0.8)
 
 <UpdatePopup@Popup>
+	datum_udpate: datum_popup
 	auto_dismiss: False
-	size_hint: (0.7, 0.3)
+	size_hint: (0.5, 0.15)
 	title: 'Popravi vnos'
 	spacing: 10
 	padding: 10
 	
 	BoxLayout:
 		orientation: 'vertical'
+		size_hint_y: 1
+		size_hint_x: 1
 		BoxLayout:
 			orientation: 'horizontal'
+			size_hint_y: 0.4
 			Spinner:
-				text: 'From p'
+				text: 'Ime'
+			TextInput:
+				id: datum_popup
+				text: 'Datum'
 
 			TextInput:
-				text: 'from p'
+				text: 'odhod'
 
 			TextInput:
-				text: 'from p'
-
-			TextInput:
-				text: 'from p'
+				text: 'prihod'
 
 			Button:
 				text: 'Popravi vnos'
-
+				
 		BoxLayout:
-
+			size_hint_y: 0.2
 			Button:
 				text: 'Close'
 				on_release: root.dismiss()
@@ -51,6 +55,7 @@ DelovneUre:
 	datum_iz_vnosa: datum_vnos
 	prihod_iz_vnosa: prihod_vnos
 	odhod_iz_vnosa: odhod_vnos
+	tip_dneva: tip_dan
 	#vnos out
 	vnos_msg: vnos_out
 	#Iskanje
@@ -88,15 +93,15 @@ DelovneUre:
 					pos: self.pos
 					size: self.size
 			Button:
-				text: 'Datoteke'
+				text: ''
 				size_hint_x: 2
 				width: 30
 			Button:
-				text: 'Porocila'
+				text: ''
 				size_hint_x: 2
 				width: 30
 			Button:
-				text: 'Nastavitve'
+				text: ''
 				size_hint_x: 2
 				width: 30
 			Label:
@@ -138,26 +143,34 @@ DelovneUre:
 							text: 'Ime'
 							values: ["Tatjana", "Maja", "Tomaz", "Edin", "Kristina", "Ana"]
 							size_hint_x: 1
+						Spinner:
+							id: tip_dan
+							text: 'Delovni-dan'
+							values: ["Delovni-dan", "Praznik", "Dopust", "Bolniska"]
+							size_hint_x: 1
 						Label:
 							text: 'Datum:'
 
 						TextInput:
 							id: datum_vnos
-							text: 'YYYY-MM-DD'
-							size_hint_x: 1.5
+							text: 'DD.MM.YYYY'
+							size_hint_x: 1.2
+							multiline: False
 						
 						Label:
 							text: 'Prihod:'
 						TextInput:
 							id: prihod_vnos
-							text: 'HH:MM'
+							text: 'hh.mm'
 							size_hint_x: 1
+							multiline: False
 						Label:
 							text: 'Odhod:'
 						TextInput:
 							id: odhod_vnos
-							text: 'HH:MM'
+							text: 'hh.mm'
 							size_hint_x: 1
+							multiline: False
 
 						Button:
 							text: 'Vnos ur'
@@ -207,8 +220,9 @@ DelovneUre:
 						
 					TextInput:
 						id: datum_od
-						text: '2017-01-01'
+						text: '01.01.2017'
 						size_hint_x: 1
+						multiline: False
 						
 					Label:
 						text: '/'
@@ -216,13 +230,13 @@ DelovneUre:
 						
 					TextInput:
 						id: datum_do
-						text: '2018-12-30'
+						text: '01.01.2019'
 						size_hint_x: 1
+						multiline: False
 						
 					Button:
 						text: 'Iskanje'
 						size_hint_x: 1
-						
 						on_press: root.iskanje()
 						
 					
@@ -282,7 +296,7 @@ DelovneUre:
 				Button:
 					text: ''
 					size_hint_y: 1
-					on_release: Factory.UpdatePopup().open()
+					# on_release: Factory.UpdatePopup().open()
 				
 				Button:
 					text: ''
