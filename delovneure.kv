@@ -9,7 +9,7 @@ DelovneUre:
 	text_size: self.size
 	halign: 'left'
 	selected_color: (0.7, 0, 0, 0.8)
-	deselected_color: (0, 0.3, 0.6, 0.8)
+	deselected_color: (0.1, 0.3, 1, 1)
 
 <UpdatePopup@Popup>
 	datum_udpate: datum_popup
@@ -75,39 +75,39 @@ DelovneUre:
 		
 		canvas:
 			Color:
-				rgba: (0.8, 0.95, 1, 0.8)
+				rgba: (0.3, 0.3, 0.3, 0.8)
 			Rectangle:
 				pos: self.pos
 				size: self.size
 
 		# meni
-		BoxLayout:
-			size_hint_y: None
-			height: 30
+		# BoxLayout:
+		# 	size_hint_y: None
+		# 	height: 30
 			
 
-			canvas:
-				Color:
-					rgba: (1, 1, 1, 0.9)
-				Rectangle:
-					pos: self.pos
-					size: self.size
-			Button:
-				text: ''
-				size_hint_x: 2
-				width: 30
-			Button:
-				text: ''
-				size_hint_x: 2
-				width: 30
-			Button:
-				text: ''
-				size_hint_x: 2
-				width: 30
-			Label:
-				text: ''
-				size_hint_x: 6
-				width: 30
+		# 	canvas:
+		# 		Color:
+		# 			rgba: (1, 1, 1, 0.9)
+		# 		Rectangle:
+		# 			pos: self.pos
+		# 			size: self.size
+		# 	# Button:
+		# 	# 	text: ''
+		# 	# 	size_hint_x: 2
+		# 	# 	width: 30
+		# 	# Button:
+		# 	# 	text: ''
+		# 	# 	size_hint_x: 2
+		# 	# 	width: 30
+		# 	# Button:
+		# 	# 	text: ''
+		# 	# 	size_hint_x: 2
+		# 	# 	width: 30
+		# 	Label:
+		# 		text: ''
+		# 		size_hint_x: 6
+		# 		width: 30
 		#meni konec
 		
 		#zgornji del
@@ -124,10 +124,10 @@ DelovneUre:
 				#Vnos
 				BoxLayout:
 					orientation: 'vertical'
-				    size_hint_y: 1.2
+				    size_hint_y: 1.1
 				    canvas:
 						Color:
-							rgba: (0.3, 0.5, 1, 1)
+							rgba: (0, 0.25, 0.7, 1)
 						Rectangle:
 							pos: self.pos
 							size: self.size
@@ -150,7 +150,7 @@ DelovneUre:
 							size_hint_x: 1
 						Label:
 							text: 'Datum:'
-
+							size_hint_x: 0.5
 						TextInput:
 							id: datum_vnos
 							text: 'DD.MM.YYYY'
@@ -159,6 +159,7 @@ DelovneUre:
 						
 						Label:
 							text: 'Prihod:'
+							size_hint_x: 0.5
 						TextInput:
 							id: prihod_vnos
 							text: 'hh.mm'
@@ -166,6 +167,7 @@ DelovneUre:
 							multiline: False
 						Label:
 							text: 'Odhod:'
+							size_hint_x: 0.5
 						TextInput:
 							id: odhod_vnos
 							text: 'hh.mm'
@@ -180,7 +182,7 @@ DelovneUre:
 				#vnos konec
 				#Iskanje 		
 				
-				#iskanje vnos
+				#ispis vnosa
 				BoxLayout:
 					orientation: 'horizontal'
 					size_hint_y: 1
@@ -193,6 +195,7 @@ DelovneUre:
 					Label:
 						text: ''
 						id: vnos_out
+
 				BoxLayout:
 					orientation: 'horizontal'
 					spacing: 10
@@ -200,7 +203,7 @@ DelovneUre:
 					size_hint_y: 1.1
 					canvas:
 						Color:
-							rgba: (0.2, 0.5, 1, 1)
+							rgba: (0, 0.25, 0.7, 1)
 						Rectangle:
 							pos: self.pos
 							size: self.size
@@ -272,14 +275,14 @@ DelovneUre:
 			size_hint_y: 8
 			canvas:
 				Color:
-					rgba: (0.1, 0.1,0.1, 0.7)
+					rgba: (1, 1, 1, 0)
 				Rectangle:
 					pos: self.pos
 					size: self.size
 
 			Label:
 				size_hint_y: 0.3
-				text: 'Rezultati'
+				text: 'Rezultati iskanja'
 			ListView:
 				id: prikaz
 				size_hint_y: 9
@@ -302,6 +305,6 @@ DelovneUre:
 					text: ''
 					size_hint_y: 1 
 				Button:
-					text: 'Reset'
+					text: 'Pocisti seznam'
 					size_hint_y: 1 
 					on_press: root.clear_list()

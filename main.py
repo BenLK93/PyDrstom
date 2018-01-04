@@ -1,5 +1,5 @@
 from kivy.config import Config
-Config.set('graphics', 'width', '1000')
+Config.set('graphics', 'width', '1050')
 Config.set('graphics', 'height', '990')
 Config.set('graphics', 'resizable', False)
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
@@ -101,7 +101,7 @@ class DelovneUre(BoxLayout):
 				datum_vnosa = row[6]
 				tip_dneva = row[7]
 				# Get the students name from textinput
-				vrstica = ' ' + str(rowid) + ' | Ime: |' + ime + '| Datum: |' + str(datum) + '| Prihod: |' + str(prihod) + '| Odhod: |' + str(odhod) + '| Ure dela: |' + str(ure_skupaj) + ' |Tip dneva: |' + str(tip_dneva) + '|-----Datum vnosa---|: ' + str(datum_vnosa)
+				vrstica = ' ' + str(rowid) + ' | Ime: |' + ime + '| Datum: |' + str(datum) + '| Prihod: |' + str(prihod) + '| Odhod: |' + str(odhod) + '| Ure dela: |' + str(ure_skupaj) + ' |' + str(tip_dneva) + "| " + '|-D. vnosa-|: ' + str(datum_vnosa)
 
 				#Add to list view
 
