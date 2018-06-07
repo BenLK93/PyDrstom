@@ -30,6 +30,8 @@ class DelovneUre(BoxLayout):
 	datum_iz_vnosa = ObjectProperty()
 	prihod_iz_vnosa = ObjectProperty()
 	odhod_iz_vnosa = ObjectProperty()
+	
+	
 
 	ime_iskanje = ObjectProperty()
 	datumod_iskanje = ObjectProperty()
@@ -37,6 +39,7 @@ class DelovneUre(BoxLayout):
 	datumvod_iskanje = ObjectProperty()
 	datumvdo_iskanje = ObjectProperty()
 	dbprikaz = ObjectProperty()
+
 	#Vnos v db
 	def vnos_v_db(self):
 		ime_v = self.ime_iz_vnosa.text
@@ -60,7 +63,11 @@ class DelovneUre(BoxLayout):
 		# elif tip_vnosa = "Dopust":
 
 		# else:
+	def vnos_datum_danes(self):
+		danes = str(datetime.date.today())
+		year, month, day = danes.split("-")
 
+		self.datum_iz_vnosa.text = day + "." + month + "." + year
 		
 		
 	def iskanje(self): 
@@ -134,6 +141,7 @@ class DelovneUre(BoxLayout):
 		self.dbprikaz.adapter.data.clear()
 		self.dbprikaz.adapter.data.extend([empty])
 		self.dbprikaz._trigger_reset_populate()
+
 		
 class DelovneUreApp(App):
 	def build(self):

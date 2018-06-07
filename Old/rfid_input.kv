@@ -1,0 +1,39 @@
+
+rfid_input:
+
+<rfid_input>:
+	input_rfid: inputrfid
+	izpis: ekran
+	
+
+
+	BoxLayout:
+		orientation: 'vertical'
+		canvas:
+			Color:
+				rgba: (0.3, 0.3, 0.3, 0.8)
+			Rectangle:
+				pos: self.pos
+				size: self.size
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint_y: 5
+			Label:
+				text: 'Dr.Stom - Casovni zig'
+				size_hint_y: 2
+				
+			TextInput:
+				id: inputrfid
+				multiline: False
+				size_hint_y: 1
+				
+
+				focus: True
+				password: True
+				on_text_validate: root.izpisi()
+			Button:
+				id: ekran
+				text:"izpis"
+				size_hint_y: 2
+				background_normal: ''
+    			background_color: (0.3, 0.3, 0.3, 0.8)

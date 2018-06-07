@@ -5,7 +5,7 @@
 #: import Factory kivy.factory.Factory
 DelovneUre:
 
-<PrikazListButton@ListItemButton>
+<PrikazListButton>
 	text_size: self.size
 	halign: 'left'
 	selected_color: (0.7, 0, 0, 0.8)
@@ -151,10 +151,15 @@ DelovneUre:
 						Label:
 							text: 'Datum:'
 							size_hint_x: 0.5
+						Button:
+							text: 'Danes'
+							size_hint_x: 0.5
+							on_press: root.vnos_datum_danes()
+
 						TextInput:
 							id: datum_vnos
-							text: 'DD.MM.YYYY'
-							size_hint_x: 1.2
+							text: 
+							size_hint_x: 0.9
 							multiline: False
 						
 						Label:
@@ -223,7 +228,7 @@ DelovneUre:
 						
 					TextInput:
 						id: datum_od
-						text: '01.01.2017'
+						text: '01.01.2018'
 						size_hint_x: 1
 						multiline: False
 						
@@ -303,7 +308,8 @@ DelovneUre:
 				
 				Button:
 					text: ''
-					size_hint_y: 1 
+					size_hint_y: 1
+					on_press: root.vnos_datum_danes() 
 				Button:
 					text: 'Pocisti seznam'
 					size_hint_y: 1 

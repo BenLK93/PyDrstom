@@ -1,0 +1,913 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"inp",
+				"input_rfid"
+			],
+			[
+				"izpi",
+				"izpisi"
+			],
+			[
+				"o",
+				"ObjectProperty"
+			],
+			[
+				"siz",
+				"size_hint_y"
+			],
+			[
+				"size",
+				"size_hint_x"
+			],
+			[
+				"date",
+				"date"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
+				"da",
+				"day"
+			],
+			[
+				"dat",
+				"datetime"
+			],
+			[
+				"do",
+				"do_datum"
+			],
+			[
+				"od",
+				"od_datum"
+			],
+			[
+				"datum",
+				"datum_dd"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"tr",
+				"_trigger_reset_populate"
+			],
+			[
+				"_",
+				"_trigger_reset_populate"
+			],
+			[
+				"v",
+				"vrstica"
+			],
+			[
+				"db",
+				"dbprikaz"
+			],
+			[
+				"row",
+				"rowid"
+			],
+			[
+				"ro",
+				"rowid"
+			],
+			[
+				"Prikaz",
+				"PrikazListButton"
+			],
+			[
+				"ali",
+				"halign"
+			],
+			[
+				"gri",
+				"GridLayout"
+			],
+			[
+				"la",
+				"Label\tKivy"
+			],
+			[
+				"gr",
+				"GridLayout\tKivy"
+			],
+			[
+				"t",
+				"TestingListViewApp"
+			],
+			[
+				"ListI",
+				"ListItemButton"
+			],
+			[
+				"ure",
+				"ure_skupaj"
+			],
+			[
+				"ime",
+				"ime_i"
+			],
+			[
+				"pr",
+				"prihod_v"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"but",
+				"Button\tKivy"
+			],
+			[
+				"size_h",
+				"size_hint_x"
+			],
+			[
+				"s",
+				"size_hint_x"
+			],
+			[
+				"TEX",
+				"text"
+			],
+			[
+				"BU",
+				"Button\tKivy"
+			],
+			[
+				"si",
+				"size_hint_y"
+			],
+			[
+				"bu",
+				"Button\tKivy"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"h",
+				"halign"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"text",
+				"text"
+			],
+			[
+				"Bu",
+				"Button\tKivy"
+			],
+			[
+				"ca",
+				"canvas\tKivy"
+			],
+			[
+				"Bo",
+				"BoxLayout\tKivy"
+			],
+			[
+				"SI",
+				"size_hint_y"
+			],
+			[
+				"SIZE",
+				"size_hint_x"
+			],
+			[
+				"Del",
+				"DelovneUreApp"
+			],
+			[
+				"de",
+				"DelovneUre"
+			],
+			[
+				"bo",
+				"BoxLayout"
+			],
+			[
+				"S",
+				"SampGridLayout"
+			],
+			[
+				"App",
+				"App"
+			],
+			[
+				"ba",
+				"background_down"
+			],
+			[
+				"back",
+				"background_normal"
+			],
+			[
+				"rgb",
+				"rgba"
+			],
+			[
+				"Size",
+				"size_hint_y"
+			],
+			[
+				"sa",
+				"sample_app"
+			],
+			[
+				"samp",
+				"SampleApp"
+			],
+			[
+				"se",
+				"selection"
+			],
+			[
+				"studetn",
+				"student_list"
+			],
+			[
+				"student",
+				"student_list"
+			],
+			[
+				"name",
+				"font_name"
+			],
+			[
+				"Stu",
+				"StudentDB"
+			],
+			[
+				"b",
+				"BoxLayout"
+			],
+			[
+				"fon",
+				"font_size"
+			],
+			[
+				"search",
+				"search_input"
+			],
+			[
+				"sear",
+				"search_input"
+			],
+			[
+				"cas",
+				"cas_odhoda"
+			],
+			[
+				"i",
+				"ime2"
+			],
+			[
+				"DE",
+				"delovne_ure_zaposlenih"
+			],
+			[
+				"d",
+				"datum"
+			],
+			[
+				"eno",
+				"enote_na_enoto"
+			],
+			[
+				"enote",
+				"enote2"
+			],
+			[
+				"p",
+				"potreben_denar"
+			],
+			[
+				"E",
+				"Entry"
+			],
+			[
+				"wr",
+				"wraper_functiion"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"li",
+				"listtwo"
+			],
+			[
+				"loggi",
+				"logging_file"
+			],
+			[
+				"log",
+				"logging_file"
+			],
+			[
+				"__",
+				"__doc__"
+			],
+			[
+				"droid",
+				"droid2"
+			],
+			[
+				"zip",
+				"zip_command"
+			],
+			[
+				"zi",
+				"zip_command"
+			],
+			[
+				"target",
+				"target_dir"
+			],
+			[
+				"ta",
+				"target_dir"
+			],
+			[
+				"g",
+				"Guido"
+			],
+			[
+				"Swa",
+				"Swaroop"
+			],
+			[
+				"print",
+				"print_max"
+			],
+			[
+				"gue",
+				"guess"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"backg",
+				"background-image"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"border-top",
+				"border-top-style"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"stranka",
+				"stranka1"
+			],
+			[
+				"priimek",
+				"priimek1"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "rfid_input.kv",
+			"settings":
+			{
+				"buffer_size": 633,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Uporabnik/source/repos/Delo_s_polji/Delo_s_polji/Delo_s_polji.cpp",
+			"settings":
+			{
+				"buffer_size": 1731,
+				"encoding": "UTF-16 LE with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 4378,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "rfid_input.py",
+			"settings":
+			{
+				"buffer_size": 914,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "print(\"hello world\")",
+			"settings":
+			{
+				"buffer_size": 20,
+				"line_ending": "Windows",
+				"name": "print(\"hello world\")"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 137.0,
+		"last_filter": "pack instal",
+		"selected_items":
+		[
+			[
+				"pack instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 186.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/PyDrstom/Project.sublime-project",
+		"/C/Pypr/PyTk/callback.py",
+		"/C/Pypr/PyTk/main.py",
+		"/C/Users/Uporabnik/Downloads/main.cpp",
+		"/C/C++/Cpp/Delo_s_polji.cpp",
+		"/C/PyDrstom/testinglv.py",
+		"/C/PyDrstom/testlv.kv",
+		"/C/PyDrstom/MultiListview.py",
+		"/C/Pypr/poskusi/test2.kv",
+		"/C/PyDrstom/db_functions.py",
+		"/C/PyDrstom/testing_db.py",
+		"/C/PyDrstom/Vnos.py",
+		"/C/PyDrstom/test2.kv",
+		"/C/Users/Uporabnik/.gitconfig",
+		"/C/Pypr/ListView&ListAdapter/studentdb.kv",
+		"/C/Pypr/SimpleCalc/calculator.kv",
+		"/C/Pypr/ListView&ListAdapter/studentdb.py",
+		"/C/Pypr/SimpleCalc/main.py",
+		"/C/PyDrstom/whdb_inputtest.py",
+		"/C/PyDrstom/weather.kv",
+		"/C/PyDrstom/kivytest.py",
+		"/C/PyDrstom/main.py",
+		"/C/PyDrstom/update_db_entry.py",
+		"/C/PyDrstom/delovneure.kv",
+		"/C/Pypr/ListView&ListAdapter/sample.kv",
+		"/C/Pypr/ListView&ListAdapter/kivytut.py",
+		"/C/PyDrstom/manyentry.py",
+		"/C/PyDrstom/u_db.py",
+		"/C/PyDrstom/kivytest.kv.py",
+		"/C/PyDrstom/weather.kv.py",
+		"/C/Pypr/PyTk/cenadi.py",
+		"/C/PyDrstom/Wh_db.py",
+		"/C/PyDrstom/work_hours.py",
+		"/C/PyDrstom/testing.db",
+		"/C/PyDrstom/Wh_db",
+		"/C/PyDrstom/sqlite3.py",
+		"/C/Pypr/PyBasic/Swaroop.py",
+		"/C/Pypr/PyTk/relative.py",
+		"/C/Pypr/PyTk/find_replace.py",
+		"/C/Pypr/PyTk/login.py",
+		"/C/Pypr/PyTk/display_properties.py",
+		"/C/Pypr/PyTk/using_widgets.py",
+		"/C/Pypr/PyTk/find&replace.py",
+		"/C/Pypr/PyTk/button_label.py",
+		"/C/Pypr/PyBasic/using_widgets.py",
+		"/C/Pypr/PyBasic/while.py",
+		"/C/Pypr/PyBasic/more_lambda.py",
+		"/C/Pypr/PyBasic/for.py",
+		"/C/Pypr/PyBasic/break.py",
+		"/C/Pypr/PyTk/root_window.py",
+		"/C/Pypr/root_window.py",
+		"/C/Pypr/retry.py",
+		"/C/Pypr/more_list_comprehension.py",
+		"/C/Pypr/more_lambda.py",
+		"/C/Pypr/stdlib_logging.py",
+		"/C/Pypr/exceptions_using_with.py",
+		"/C/Pypr/exceptions_finally.py",
+		"/C/Pypr/exceptions_raise.py",
+		"/C/Pypr/KivyPy/main.py",
+		"/C/Pypr/kivy_version.py",
+		"/C/Pypr/exceptions_raise",
+		"/C/Pypr/test1.py",
+		"/C/Pypr/object_op_obj_var.py",
+		"/C/Pypr/Methods_and_classes.py",
+		"/C/Pypr/zipbackup1.py",
+		"/C/Pypr/ds_string_methods.py",
+		"/C/Pypr/references.py",
+		"/C/Pypr/set.py",
+		"/C/Pypr/init.py",
+		"/C/Pypr/object_op_obj_var..py",
+		"/C/Pypr/printtime.py",
+		"/C/Pypr/ds_seq.py",
+		"/C/Pypr/ds_using_dict.py",
+		"/C/Pypr/ds_using_tuple.py",
+		"/C/Pypr/ds_using_list.py",
+		"/C/Pypr/mymodule_demo.py",
+		"/C/Pypr/mymodule.py",
+		"/C/Pypr/modul_using_sys.py",
+		"/C/Pypr/function_docstring.py",
+		"/C/Pypr/function_return.py",
+		"/C/Pypr/function_default.py",
+		"/C/Pypr/function_vararg.py",
+		"/C/Pypr/marvin.py",
+		"/C/Pypr/function_local.py",
+		"/C/Pypr/function_param.py",
+		"/C/Pypr/function1.py",
+		"/C/Pypr/continue.py",
+		"/C/Pypr/break.py",
+		"/C/Pypr/for.py",
+		"/C/Pypr/while.py",
+		"/C/Pypr/Ifstavki.py",
+		"/C/Pypr/expression.py",
+		"/C/Pypr/DataTypes.py",
+		"/C/Pypr/Swaroop.py",
+		"/C/Pypr/HelloWorld.py",
+		"/C/Pypr/function_local",
+		"/C/Pypr/Hello World.py",
+		"/C/Veterinarius/Koda/index.html",
+		"/C/Veterinarius/Koda/css.css",
+		"/C/Dr-stom/index.html",
+		"/C/Dr-stom/Dr-stom-css.css",
+		"/C/Users/Uporabnik/AppData/Local/Temp/fz3temp-2/.htaccess",
+		"/C/Users/Uporabnik/AppData/Local/Temp/fz3temp-2/wp-config.php",
+		"/C/Users/Uporabnik/Desktop/FileZilla.xml",
+		"/C/Veterinarius/mediaquerryVeterinarius old.css",
+		"/C/Veterinarius/16_1_2017CSS_Veterinarius.css",
+		"/C/Veterinarius/spremcssvet.css",
+		"/C/Users/Uporabnik/Downloads/Spletno mesto vaje1 20161220/mysite/default.html",
+		"/C/Veterinarius/post code",
+		"/C/Veterinarius/p.php",
+		"/C/Danaja/www.danaja.si/system/header.php",
+		"/C/Danaja/www.danaja.si/index.php",
+		"/C/Danaja/www.danaja.si/system/_vti_cnf/config.php",
+		"/C/Danaja/www.danaja.si/system/footer.php",
+		"/C/Danaja/css/style.css",
+		"/C/Danaja/css/style-mobile.css",
+		"/C/Danaja/css/skel-noscript.css",
+		"/C/Danaja/css/style-desktop.css",
+		"/C/Danaja/css/style-1000px.css",
+		"/C/Danaja/index.html",
+		"/C/Users/Uporabnik/Desktop/danaja.css",
+		"/C/Users/Uporabnik/Desktop/Danaja.html",
+		"/C/Faks/STOJ/dokumenti/funkcije.js",
+		"/C/Danaja/www.danaja.si/domov2.php",
+		"/C/Program Files/Inkscape/inkscape.exe",
+		"/C/Faks/STOJ/Ino/DOM/DOM/dom.js",
+		"/C/Faks/STOJ/Ino/DOM/DOM/funkcije.js",
+		"/C/Faks/STOJ/dokumenti/index.html"
+	],
+	"find":
+	{
+		"height": 45.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "rfid_input.kv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Kivy Language/kv.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Uporabnik/source/repos/Delo_s_polji/Delo_s_polji/Delo_s_polji.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1124,
+								1124
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 741.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1178,
+								1182
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 738.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "rfid_input.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 914,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								246,
+								246
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18,
+								18
+							]
+						],
+						"settings":
+						{
+							"auto_name": "print(\"hello world\")",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 45.0
+	},
+	"input":
+	{
+		"height": 58.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 127.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Project.sublime-project",
+	"replace":
+	{
+		"height": 86.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 195.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
