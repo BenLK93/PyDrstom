@@ -3,13 +3,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtCore import QTimer
 from timestamp_window_ui import *
-import sqlite3
+import psycopg2
 import datetime
 from time import sleep
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
-    conn = sqlite3.connect('drstom_ure_zaposleni.db')
+    conn = psycopg2.connect("dbname=ure user=postgres password=")
     c = conn.cursor()
     trenutni_ID=[]
     def __init__(self):
@@ -49,25 +49,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.vnos.setText("")
         print(self.trenutni_ID[0])
 
-
-        conn = sqlite3.connect('drstom_ure_zaposleni.db')
+        conn = psycopg2.connect("dbname=ure user=postgres password=")
         c = conn.cursor()
-        data = c.execute("""SELECT rowid,*FROM zaposleni;""")
+        c.execute("""SELECT *FROM chip;""")
 
-        for row in data:
-            print(row)
-            if (str(self.trenutni_ID[0])==str(row[1])):
+        for row in c:
+            # print(row)
+            if (self.trenutni_ID[0]==row[2]):
                 self.sporocilo.setText("")
-                self.trenutni_ID.append(str(row[2]))
-                print(row[1])
-                text1= "Pozdravljen/a " + str(self.trenutni_ID[1])
+                self.trenutni_ID.append(str(row[1]))
+
+                print(row[0], row[1], row[2], row[3])
+                zdl = str(row[1])
+                c.execute("""SELECT * FROM zaposleni WHERE zaposleni_id=%s;""",(zdl))
+
+                for row in c:
+                    print(row)
+                text1= "Pozdravljen/a " + str(row[2])+" "+str(row[3])
                 self.pushButtonPrihod.show()
                 self.pushButtonOdhod.show()
                 self.pushButtonInfo.show()
                 break
+                
             else:
                 print("wrong person")
-                text1 = "Či ni bil prepoznan"
+                text1 = "Čip ni bil prepoznan"
                 self.pushButtonPrihod.hide()
                 self.pushButtonOdhod.hide()
                 self.pushButtonInfo.hide()
@@ -86,8 +92,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
     def prihodGumb(self):
-
-        conn = sqlite3.connect('drstom_ure_zaposleni.db')
+        conn = psycopg2.connect("dbname=ure user=postgres password=")
         c = conn.cursor()
 
 
@@ -96,14 +101,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         try:
 
-            ID = int(self.trenutni_ID[0])
-            ime = str(self.trenutni_ID[1])
-            cas = str(self.cas.text())
-            datum = str(self.datum.text())
+            idz = str(self.trenutni_ID[1])
+            datum_cas = str(datetime.datetime.now())
             dogodek = "prihod"
             # print(ID)
-            c.execute("INSERT INTO ure_zaposlenih VALUES(?, ?, ?, ?, ?)", (ID, ime, datum, cas, dogodek))
+            c.execute("""INSERT INTO dogodek(zaposleni_id, cas_datum, tip_dogodka) VALUES(%s, %s, %s);""", (idz, datum_cas, dogodek))
+            # c.execute("INSERT INTO ure_zaposlenih VALUES(?, ?, ?, ?, ?)", (ID, ime, datum, cas, dogodek))
             conn.commit()
+
+            
+  
         except:
             print("error")
         conn.close()
@@ -115,18 +122,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def odhodGumb(self):
 
-        conn = sqlite3.connect('drstom_ure_zaposleni.db')
+        conn = psycopg2.connect("dbname=ure user=postgres password=")
         c = conn.cursor()
 
         try:
-            ID = int(self.trenutni_ID[0])
-            ime = str(self.trenutni_ID[1])
-            cas = str(self.cas.text())
-            datum = str(self.datum.text())
+            idz = str(self.trenutni_ID[1])
+            datum_cas = datetime.datetime.now()
             dogodek = "odhod"
             # print(ID)
-            c.execute("INSERT INTO ure_zaposlenih VALUES(?, ?, ?, ?, ?)", (ID, ime, datum, cas, dogodek))
+            c.execute("""INSERT INTO dogodek(zaposleni_id, cas_datum, tip_dogodka) VALUES(%s, %s, %s);""", (idz, datum_cas, dogodek))
+            # c.execute("INSERT INTO ure_zaposlenih VALUES(?, ?, ?, ?, ?)", (ID, ime, datum, cas, dogodek))
             conn.commit()
+            # print(ID)
+            # c.execute("INSERT INTO ure_zaposlenih VALUES(?, ?, ?, ?, ?)", (ID, ime, datum, cas, dogodek))
+            # conn.commit()
         except:
             print("error")
         conn.close()
@@ -136,16 +145,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.sporocilo.show()
 
     def infoGumb(self):
-        
-        conn = sqlite3.connect('drstom_ure_zaposleni.db')
+        conn = psycopg2.connect("dbname=ure user=postgres password=")
         c = conn.cursor()
+        zid= str(self.trenutni_ID[1])
+        print(zid)
 
         try:
-            print(self.trenutni_ID[0]) 
-            print(self.trenutni_ID[1])
-            print(self.cas.text())
-            print(self.datum.text())
-            print("Odhod")
+            c.execute("""SELECT cas_datum FROM dogodek WHERE zaposleni_id=%s ORDER BY cas_datum DESC; """,(zid,))
+            for row in c:
+                date = row[0]
+                print(date)
+ 
         except:
             print("error")
 
